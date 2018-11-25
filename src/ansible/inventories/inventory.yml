@@ -1,0 +1,15 @@
+---
+all:
+  children:
+    group1:
+      hosts:
+        node1: 'null'
+        node2: 'null'
+    group2:
+      hosts:
+        node1: 'null'
+        node2: 'null'
+  hosts:
+    nod3: 'null'
+    node1: 'null'
+    node2: 'null'

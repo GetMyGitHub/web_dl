@@ -1,0 +1,12 @@
+---
+ansible_dir_path: ./api/ansible/
+ansible_work_dir: /home/christophe/ownCloud/exemple_ansible/test.yml
+color: red
+debug_mode: false
+default_user: admin
+framework: flask
+hash: ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff
+host: 127.0.0.1
+inventory_file_subpath: inventory.yml
+password: ''
+port: 5000

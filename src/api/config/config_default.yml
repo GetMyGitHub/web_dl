@@ -1,0 +1,11 @@
+---
+  ansible_dir_path: /home/christophe/ownCloud/exemple_ansible
+  inventory_file_subpath: ''
+  debug_mode: false
+  default_user: admin
+  execution: initiale
+  framework: flask
+  hash:
+  host: 127.0.0.1
+  password: DL_Lib_56270.
+  port: 5000
