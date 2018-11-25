@@ -1,0 +1,23 @@
+<html>
+<head>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+  <pre id="console"></pre>
+</body>
+<script src="ansi_up.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var ansi_up = new AnsiUp;
+  var txt  = "PLAY [exemple] *****************************************************************************************\n\nTASK [Gathering Facts] *********************************************************************************[0;32m\nok: [127.0.0.1]\n\n[0;mTASK [exemple : ligne 1] *******************************************************************************[0;32m\nok: [127.0.0.1]\n\n[0;mTASK [exemple : ligne 2] *******************************************************************************[0;32m\nok: [127.0.0.1]\n\n[0;mTASK [exemple : ligne 3] *******************************************************************************[0;32m\nok: [127.0.0.1]\n\n[0;mTASK [exemple : ligne 4] *******************************************************************************[0;32m\nok: [127.0.0.1]\n\n[0;mTASK [exemple : ligne 5] *******************************************************************************[0;32m\nok: [127.0.0.1]\n\n[0;mTASK [exemple : ligne 6] *******************************************************************************[0;32m\nok: [127.0.0.1]\n\n[0mTASK [exemple : include_vars] **************************************************************************\n[0;31mfatal: [127.0.0.1]: FAILED! => {ansible_facts: {},ansible_included_var_files: [], changed: false, message: Could not find or access 'mes_variables.yml'\nSearched in:\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/vars/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/tasks/vars/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/tasks/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/vars/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/mes_variables.yml}\n[0m	to retry, use: --limit @/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/exemple.retryPLAY \n\nRECAP *********************************************************************************************\n\n[0;31m127.0.0.1[0m                  : [0;32mok=7   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m";
+
+
+  var txt  = "\n\n\033[1;33;40m dsvds  \033[1;33;41m 33;41  \033[1;33;42m 33;42  \033[1;33;43m 33;43  \033[1;33;44m 33;44  \033[1;33;45m 33;45  \033[1;33;46m 33;46  \033[1m\033[0\n\n\033[1;33;42m >> Tests OK\n\n";
+
+
+  var html = ansi_up.ansi_to_html(txt);
+  var cdiv = document.getElementById("console");
+  cdiv.innerHTML = html;
+</script>
+</html>

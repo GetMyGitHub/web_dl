@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+      <script src="/static/ansi_up.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <h1>Test process</h1>
+
+
+
+    <p id="context"></p>
+
+
+
+
+
+
+
+
+    <p id="text"> "\n \n \033[1;33;40m 33;40  \033[1;33;41m 33;41  \033[1;33;42m 33;42  \033[1;33;43m 33;43  \033[1;33;44m 33;44  \033[1;33;45m 33;45  \033[1;33;46m 33;46  \033[1m\033[0\n\n\033[1;33;42m >> Tests OK\n\n"</p>
+
+    <p>
+    <button type="button" onclick="test()">test</button>
+    <button type="button" onclick="test1()">color</button>
+    </p>
+
+    <script>
+
+
+    function test1(){
+
+      var txt  = "\n\n\033[1;33;40m 33;40  \033[1;33;41m 33;41  \033[1;33;42m 33;42  \033[1;33;43m 33;43  \033[1;33;44m 33;44  \033[1;33;45m 33;45  \033[1;33;46m 33;46  \033[1m\033[0\n\n\033[1;33;42m >> Tests OK\n\n"
+
+
+      // var txt = "\x1b[0;32mok: [127.0.0.1]\x1b[0m\n"
+
+      var ansi_up = new AnsiUp;
+
+      var html = ansi_up.ansi_to_html(txt);
+
+      var cdiv = document.getElementById("text");
+
+      cdiv.innerHTML = html;
+    }
+
+    function test(){
+      var request = "/test_page/start";
+      var action = 'start_process'
+      callAjax(request, action, 1);
+    }
+
+    function callAjax(request, action, timer) {
+      var xhttp;
+      if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xhttp = new XMLHttpRequest();
+        } else {
+        // code for IE6, IE5
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+          response = this.responseText;
+          setTimeout(function(){ traite(request, action, response); }, timer);
+        }
+      };
+      xhttp.open("GET", request, true);
+      xhttp.send();
+    }
+
+    function traite(request, action, response){
+      switch(action) {
+        case "start_process":
+            if(response == 'test lancé'){
+              request = "/test_page/return";
+              action = "get_process";
+              callAjax(request, action, 1);
+            }
+            break;
+        case "get_process":
+
+            // document.getElementById("context").innerHTML = response;
+
+
+            var txt = response;
+
+            var ansi_up = new AnsiUp;
+
+            var html = ansi_up.ansi_to_html(txt);
+
+            var cdiv = document.getElementById("context");
+
+            cdiv.innerHTML = html;
+
+
+
+
+            request = "/test_page/process_running";
+            action = "check_process";
+            callAjax(request, action, 1000);
+            break;
+        case "check_process":
+            if(response == 'True'){
+              request = "/test_page/return";
+              action = "get_process";
+              callAjax(request, action, 1);
+            }
+            break;
+        default:
+            alert('inconnu');
+        }
+
+
+    }
+
+
+
+    </script>
+
+  </body>
+</html>

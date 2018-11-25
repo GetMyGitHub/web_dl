@@ -1,0 +1,31 @@
+
+PLAY [exemple] **************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************
+[0;32mok: [127.0.0.1][0m
+
+TASK [exemple : ligne 1] ****************************************************************************
+[0;32mok: [127.0.0.1][0m
+
+TASK [exemple : ligne 2] ****************************************************************************
+[0;32mok: [127.0.0.1][0m
+
+TASK [exemple : ligne 3] ****************************************************************************
+[0;32mok: [127.0.0.1][0m
+
+TASK [exemple : ligne 4] ****************************************************************************
+[0;32mok: [127.0.0.1][0m
+
+TASK [exemple : ligne 5] ****************************************************************************
+[0;32mok: [127.0.0.1][0m
+
+TASK [exemple : ligne 6] ****************************************************************************
+[0;32mok: [127.0.0.1][0m
+
+TASK [exemple : include_vars] ***********************************************************************
+[0;31mfatal: [127.0.0.1]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'mes_variables.yml'\nSearched in:\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/vars/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/tasks/vars/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/roles/exemple/tasks/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/vars/mes_variables.yml\n\t/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/mes_variables.yml"}[0m
+	to retry, use: --limit @/home/christophe/Bureau/Projet_stage/tests/exemple_ansible/exemple.retry
+
+PLAY RECAP ******************************************************************************************
+[0;31m127.0.0.1[0m                  : [0;32mok=7   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m
+
