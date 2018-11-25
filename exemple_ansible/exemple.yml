@@ -1,0 +1,5 @@
+- name : exemple
+  hosts: all
+  connection: local
+  roles: 
+    - exemple

@@ -1,0 +1,30 @@
+---
+
+- name: "ligne 1"
+  lineinfile: path="./fichier_exemple_ansible_delme.txt" line="ligne1" create=yes
+  become: no
+
+- name: "ligne 2"
+  lineinfile: path="./fichier_exemple_ansible_delme.txt" line="ligne2" create=yes
+  become: no
+
+- name: "ligne 3"
+  lineinfile: path="./fichier_exemple_ansible_delme.txt" line="ligne3" create=yes
+  become: no
+
+- name: "ligne 4"
+  lineinfile: path="./fichier_exemple_ansible_delme.txt" line="ligne4" create=yes
+  become: no
+
+- name: "ligne 5"
+  lineinfile: path="./fichier_exemple_ansible_delme.txt" line="ligne5" create=yes
+  become: no
+
+- name: "ligne 6"
+  lineinfile: path="./fichier_exemple_ansible_delme.txt" line="ligne6" create=yes
+  become: no
+
+# ça pete quand on active :
+- include_vars: 'mes_variables.yml'
+
+
